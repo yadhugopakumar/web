@@ -1,0 +1,88 @@
+
+
+<html>
+<head>
+<title>striped table</title>
+
+
+<style>
+
+body{
+
+width:100%;
+display:grid;
+place-items:center;
+}
+h1{
+margin:80px;
+}
+.strippedtable{
+border:2px;
+padding:10px;
+border-collapse:collapse;
+}
+.strippedtable  th{
+background-color:red;
+padding:10px;
+color:white;
+}
+.strippedtable  td{
+padding:10px 50px;
+
+}
+.strippedtable  tr:nth-child(even){
+background-color:#f2f2f2;
+}
+
+.strippedtable  tr:hover{
+background-color:burlywood;
+}
+</style>
+</head>
+
+<body>
+
+<h1>This webpage is styled with external css</h1>
+
+<table class="strippedtable" >
+
+	
+	<tr>
+	<th >S.No:</th>
+	<th >Admission No:</th>
+	<th >Name:</th>
+	<th >Email id:</th>
+	</tr>
+	<tr>
+	<td >1</th>
+	<td >19MP2134</td>
+	<td >Uthara Rajesh</td>
+	<td >uthararajesh@gmail.com</td>
+	</tr>
+	<tr>
+	<td >2</th>
+	<td >19MP2135</td>
+	<td >Malaika</td>
+	<td >malaika@gmail.com</td>
+	</tr><tr>
+	<td >3</th>
+	<td >19MP2136</td>
+	<td >Ajith</td>
+	<td >ajith@gmail.com</td>
+	</tr><tr>
+	<td >4</th>
+	<td >19MP2137</td>
+	<td >Aditha</td>
+	<td >aditha@gmail.com</td>
+	</tr><tr>
+	<td >5</th>
+	<td >19MP2138</td>
+	<td >Arjun</td>
+	<td >arjun@gmail.com</td>
+	</tr>
+
+
+</table>
+</body>
+</html>
+
