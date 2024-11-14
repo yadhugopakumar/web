@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FORM</title>
+</head>
+<style>
+td{
+padding:8px;
+}
+form{
+margin-bottom:50px;
+}
+
+</style>
+
+<body>
+<cenTer>
+<h1>STUDENT RESGISTER FORM</h1><br>
+<form id="form" method="post" action="#">
+    <table border="1"cellpadding="2"width=60% >
+    <tr> 
+    	<th>FIRST NAME</th>
+    	<td><span><input type="text"maxlength="30" id="fname">(max 30 characters)</span></td>
+    </tr>
+    <tr> 
+    	<th>LAST NAME</th>
+    	<td><span><input type="text"maxlength="30"id="lname">(max 30 characters)</span></td>
+    </tr>
+    <tr> 
+    	<th align="left">DATE OF BIRTH</th>
+    	<td><input type="DATE"></td>
+    </tr>
+    <tr> 
+    	<th>EMAIL ID</th>
+    	<td><input type="EMAIL" id="email"></td>
+    </tr>
+    <tr> 
+    	<th>MOBILE NUMBER</th>
+    	<td><span><input type="tel" id="phone">(10 digit number)</span></td>
+    </tr>
+     <tr> 
+    	<th>GENDER </th>
+    	<td><span><input type="radio"value="Male" name="RADIO">Male <input type="radio"name="RADIO" value="Female">Female</span></td>
+    </tr>
+    <tr> 
+    	<th>ADDRESS</th>
+    	<td><textarea name="ADDRESS" rows="4" cols="50"></textarea></td>
+    </tr>
+ <tr> 
+    	<th>CITY</th>
+    	<td><span><input type="text" maxlength="30">(max 30 characters)</span></td>
+    </tr>
+     <tr> 
+    	<th>PIN CODE</th>
+    	<td><span><input type="text"maxlength="6">(max 30 characters)</span></td>
+    </tr>
+     <tr> 
+    	<th>STATE</th>
+    	<td><span><input type="text"maxlength="30">(max 30 characters)</span></td>
+    </tr>
+   <tr> 
+    	<th>COUNTRY</th>
+    	<td><select name="COUNTRY" style="width:40%">
+    <option value="INDIA">INDIA</option>
+    <option value="USA">USA</option>
+    <option value="OTHER">OTHER </option>
+
+  </select></td>
+    </tr>
+    <tr> 
+    	<th>HOBBIES</th>
+    	<td>Drawing <input type="checkbox" name="drawing"  /> Singing <input type="checkbox" name="singing"/>Drawing <input type="checkbox" name="drawing"  />Dancing <input type="checkbox" name="dancing" /> sketching <input type="checkbox" name="sketching" /><br> others <input type ="text">
+    
+  </div></td>
+    </tr>
+    
+    
+    <tr> 
+    	<th>QUALIFICATION</th>
+    	<td>
+    		<TABLE border=0>
+    			<tr>
+    			<th>SI.No.Examination</th>
+    			<th>Board</th>
+    			<th>Percentage</th>
+    			<th>Year of passing</th>
+    			</tr>
+    			
+    			<tr>
+    			<td>1	  Class X</td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			</tr>
+    			<td>2	  Class XII</td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			</tr>
+    			<td>3	 Graduation</td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			</tr>
+    			<td>4	 Masters</td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			<td><input type="text"></td>
+    			</tr>
+    		</TABLE>
+   	</td>
+    </tr>
+    <tr> 
+    	<th>COURSES APPLIED FOR </th>
+    	<td><span>MCA <input type="radio"value="MCA" name="RADIO"> M.TECH<input type="radio"name="RADIO" value="MTECH"> M.Sc<input type="radio"name="RADIO" value="MTECH"> Ph.d<input type="radio"name="RADIO" value="MTECH"></span></td>
+    </tr>
+     <tr> 
+    	<th>TYPE YOUR PASSWORD</th>
+    	<td><span><input type="PASSWORD"maxlength="30">(max 30 characters)</span></td>
+    </tr>
+      <tr> 
+    	<th>UPLOAD YOUR PHOTO</th>
+    	<td><input type="FILE"maxlength="30"></td>
+    </tr>
+    <tr> 
+    	<th align="left">DATE OF TC</th>
+    	<td><input type="DATE"></td>
+    </tr>
+    <TR >
+    <td COLSPAN="2"align="center">
+    <BUTTON TYPE="SUBMIT">submit</BUTTON>
+    <BUTTON TYPE="reset">Reset</BUTTON>
+    </td>
+    </TR>
+    </table>
+    
+</form>       
+</center>
+
+
+<script>
+const form=document.getElementById("form");
+
+form.addEventListener('submit',(e)=>{
+e.preventDefault();
+
+const fname=document.getElementById("fname").value;
+const lname=document.getElementById("lname").value;
+const email=document.getElementById("email").value;
+const phone=document.getElementById("phone").value;
+
+
+// fname and lname validation
+function namevalidation(){
+	 if ((fname.trim() === "") || (lname.trim()==="") ){
+        alert("Name cannot be empty");
+        return false;
+    }
+    const npattern = /^[A-Za-z\s]+$/;
+    if ((!npattern.test(fname))|| (!npattern.test(lname))) {
+        alert("Name can only contain letters and spaces");
+        return false;
+    }
+  
+
+    return true;
+}
+//email validation
+function emailvalidation(){
+	 if (email.trim() === "") {
+        alert("Email cannot be empty");
+        return false;
+    }
+
+     const epattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!epattern.test(email)) {
+        alert("Invalid email format");
+        return false;
+    }
+
+    return true;
+}
+
+
+
+//phone validation
+function phonevalidation(){
+	 if (phone.trim() === "") {
+        alert("phone cannot be empty");
+        return false;
+    }
+	
+     const ppattern = /^\d{10}$/;
+    if (!ppattern.test(phone) ) {
+        alert("Invalid phone number");
+        return false;
+    }
+return true;
+	
+}
+
+	if(namevalidation() && phonevalidation() && emailvalidation() )
+	{
+	alert("Registration success");
+	form.submit();
+	
+	}
+	
+
+
+});
+
+</script>
+
+</body>
+</html>

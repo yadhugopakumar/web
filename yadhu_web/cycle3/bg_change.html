@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bg change</title>
+</head>
+<style>
+body{
+background-color:#dcd3ff;
+}
+button{
+margin-top:60px;
+border:0;
+outline:0;
+padding:10px 40px;
+background-color:white;
+border-radius:3px;
+color:black;
+}
+button:hover{
+background-color:grey;
+color:white
+}
+</style>
+
+<body>
+<cenTer>
+<h1>Change Background Color</h1><br>
+	<p> when you click the button below the background color of the current webpage will changes to red, and if you double clicked it will change to green<p>
+	<button id="btn">Change color</button>
+
+</center>
+
+
+<script>
+const btn=document.getElementById("btn");
+
+btn.addEventListener('click',()=>{
+
+document.body.style.backgroundColor="red";
+document.body.style.color="white";
+});
+btn.addEventListener('dblclick',()=>{
+
+document.body.style.backgroundColor="green";
+document.body.style.color="white";
+});
+
+</script>
+
+</body>
+</html>
